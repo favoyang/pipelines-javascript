@@ -16,8 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-git clone https://github.com/favoyang/pipelines-javascript.git repo
-cd repo
+    git clone https://github.com/favoyang/pipelines-javascript.git repo
+    cd repo
 displayName: 'clone another repo'
 
 - script: |
