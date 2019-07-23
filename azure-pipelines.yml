@@ -24,4 +24,4 @@ steps:
      command: publish
      workingDir: repo
      publishRegistry: useExternalRegistry
-     publishEndpoint: http://package.openupm.com
+     publishEndpoint: openupm
