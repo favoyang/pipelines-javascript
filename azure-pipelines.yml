@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    git clone https://github.com/favoyang/pipelines-javascript.git repo
+    git clone https://github.com/favoyang/unity-addressable-importer repo
   displayName: 'clone another repo'
 
 - script: |
