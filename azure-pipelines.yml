@@ -18,7 +18,7 @@ steps:
 - script: |
     git clone https://github.com/favoyang/pipelines-javascript.git repo
     cd repo
-displayName: 'clone another repo'
+  displayName: 'clone another repo'
 
 - script: |
     echo $PWD
