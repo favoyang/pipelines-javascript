@@ -17,11 +17,11 @@ steps:
 
 - script: |
     git clone https://github.com/favoyang/unity-addressable-importer repo
-  displayName: 'clone another repo'
+  displayName: 'Clone target repo'
 
-- script: |
-    echo $PWD
-    cd repo
-    echo $PWD
-    npm pack
-  displayName: 'npm pack'
+- task: Npm@1
+  inputs:
+     command: publish
+     workingDir: repo
+     publishRegistry: useExternalRegistry
+     publishEndpoint: http://package.openupm.com
