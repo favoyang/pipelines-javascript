@@ -19,6 +19,12 @@ steps:
     echo repobranch: $(repobranch)
   displayName: 'Env info'
 
+- powershell: |
+    Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
+    Write-Host "##vso[task.complete result=Canceled;]DONE"
+  condition: and(succeeded(), or(eq(variables['repogit'], ''), eq(variables['repobranch'], '')))
+  displayName: 'Cancel build'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
