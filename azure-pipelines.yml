@@ -15,8 +15,8 @@ pool:
 
 steps:
 - script: |
-    echo $(repogit)
-    echo $(repobranch)
+    echo repogit: $(repogit)
+    echo repobranch: $(repobranch)
   displayName: 'Env info'
 
 - task: NodeTool@0
