@@ -20,8 +20,6 @@ steps:
   displayName: 'Print environment'
 
 - powershell: |
-    Write-Host "repogit: $(repogit)"
-    Write-Host "repobranch: $(repobranch)"
     Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
     Write-Host "##vso[task.complete result=Canceled;]DONE"
   condition: and(succeeded(), or(eq(variables['repogit'], ''), eq(variables['repobranch'], '')))
