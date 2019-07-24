@@ -6,6 +6,10 @@
 trigger:
 - master
 
+variables:
+  repogit: https://github.com/favoyang/unity-addressable-importer
+  repodir: repo
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -16,12 +20,12 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    git clone https://github.com/favoyang/unity-addressable-importer repo
+    git clone $repogit $repodir
   displayName: 'Clone target repo'
 
 - task: Npm@1
   inputs:
      command: publish
-     workingDir: repo
+     workingDir: $repodir
      publishRegistry: useExternalRegistry
      publishEndpoint: openupm
