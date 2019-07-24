@@ -6,7 +6,8 @@
 trigger: none
 
 variables:
-  # repogit: customized in parameter
+  # repogit:
+  # repobranch:
   repodir: repo
 
 pool:
@@ -15,6 +16,7 @@ pool:
 steps:
 - script: |
     echo $(repogit)
+    echo $(repobranch)
   displayName: 'Env info'
 
 - task: NodeTool@0
@@ -28,7 +30,8 @@ steps:
   displayName: 'Clean target folder'
 
 - script: |
-    git clone $(repogit) $(repodir)
+    git clone --depth 1 --branch $(repobranch) $(repogit) $(repodir)
+    cd $(repodir)
   displayName: 'Clone target repository'
 
 - task: Npm@1
