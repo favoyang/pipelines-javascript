@@ -22,8 +22,8 @@ steps:
 - script: |
     echo $(repodir)
     echo $(repogit)
-    echo $(testvar)
-  displayName: 'Print stats'
+    echo $testvar
+  displayName: 'Print env'
 
 - script: |
     git clone $(repogit) $(repodir)
