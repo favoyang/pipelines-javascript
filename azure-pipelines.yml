@@ -22,7 +22,7 @@ steps:
 - script: |
     echo $(repodir)
     echo $(repogit)
-    echo $testvar
+    echo $(testvar)
   displayName: 'Print env'
 
 - script: |
