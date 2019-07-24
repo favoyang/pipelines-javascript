@@ -7,7 +7,6 @@ trigger:
 - master
 
 variables:
-  repogit: https://github.com/favoyang/unity-addressable-importer
   repodir: repo
 
 pool:
@@ -20,9 +19,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo $(repodir)
-    echo $(repogit)
-    echo $(testvar)
+    echo repogit => $(repogit)
+    echo repodir => $(repodir)
   displayName: 'Print env'
 
 - script: |
