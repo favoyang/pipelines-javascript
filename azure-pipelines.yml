@@ -20,6 +20,12 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    echo $(repodir)
+    echo $(repogit)
+    echo $(testvar)
+  displayName: 'Print stats'
+
+- script: |
     git clone $(repogit) $(repodir)
   displayName: 'Clone target repo'
 
