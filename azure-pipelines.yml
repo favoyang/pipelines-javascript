@@ -17,13 +17,15 @@ steps:
 - script: |
     echo repogit: $(repogit)
     echo repobranch: $(repobranch)
-  displayName: 'Env info'
+  displayName: 'Print environment'
 
 - powershell: |
+    Write-Host "repogit: $(repogit)"
+    Write-Host "repobranch: $(repobranch)"
     Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
     Write-Host "##vso[task.complete result=Canceled;]DONE"
   condition: and(succeeded(), or(eq(variables['repogit'], ''), eq(variables['repobranch'], '')))
-  displayName: 'Cancel build'
+  displayName: 'Verify environment'
 
 - task: NodeTool@0
   inputs:
