@@ -20,12 +20,12 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    git clone $repogit $repodir
+    git clone $(repogit) $(repodir)
   displayName: 'Clone target repo'
 
 - task: Npm@1
   inputs:
      command: publish
-     workingDir: $repodir
+     workingDir: $(repodir)
      publishRegistry: useExternalRegistry
      publishEndpoint: openupm
