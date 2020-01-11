@@ -15,8 +15,8 @@ pool:
 
 steps:
 - script: |
-    echo repodir: $[variables.repodir]
-    echo repobranch: $[variables.repobranch]
+    echo repodir: $REPO_DIR
+    echo repobranch: $REPOBRANCH
   displayName: 'Print environment'
 
 # - powershell: |
