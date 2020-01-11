@@ -15,8 +15,8 @@ pool:
 
 steps:
 - script: |
-    echo repodir: ${{ repodir }}
-    echo repobranch: ${{ repobranch }}
+    echo repodir: $[repodir.var]
+    echo repobranch: $[repobranch.var]
   displayName: 'Print environment'
 
 # - powershell: |
