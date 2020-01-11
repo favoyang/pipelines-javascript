@@ -18,11 +18,15 @@ steps:
 - script: |
     echo repodir: $REPODIR
     [[ -z "$REPODIR" ]] && echo '$REPODIR not found' && exit 1
-    echo repobranch: $REPOBRANCH
-    [[ -z "$REPOBRANCH" ]] && echo '$REPOBRANCH not found' && exit 1
     echo repourl: $REPOURL
     [[ -z "$REPOURL" ]] && echo '$REPOURL not found' && exit 1
+    echo repobranch: $REPOBRANCH
+    [[ -z "$REPOBRANCH" ]] && echo '$REPOBRANCH not found' && exit 1
   displayName: 'Print environment'
+
+- script: |
+    echo test
+  displayName: 'next'
 
 # - powershell: |
 #     Write-Host "##vso[task.setvariable variable=agent.jobstatus;]canceled"
