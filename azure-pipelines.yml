@@ -19,6 +19,7 @@ steps:
     echo repobranch: $REPOBRANCH
     [[ -z "$REPODIR" ]] && echo '$REPODIR not found' && exit 1
     [[ -z "$REPOBRANCH" ]] && echo '$REPOBRANCH not found' && exit 1
+    exit 0
   displayName: 'Print environment'
 
 - script: |
