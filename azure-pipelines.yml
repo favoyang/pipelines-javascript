@@ -16,7 +16,9 @@ pool:
 steps:
 - script: |
     echo repodir: $REPODIR
+    [[ -z "$REPODIR" ]] && echo 'variable $REPODIR not found'
     echo repobranch: $REPOBRANCH
+    [[ -z "$REPOBRANCH" ]] && echo 'variable $REPOBRANCH not found'
   displayName: 'Print environment'
 
 # - powershell: |
