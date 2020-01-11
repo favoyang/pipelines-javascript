@@ -15,7 +15,7 @@ pool:
 
 steps:
 - script: |
-    echo repodir: $REPO_DIR
+    echo repodir: $REPODIR
     echo repobranch: $REPOBRANCH
   displayName: 'Print environment'
 
