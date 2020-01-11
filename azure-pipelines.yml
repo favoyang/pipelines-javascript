@@ -8,7 +8,8 @@ trigger:
 
 variables:
   repodir: repo
-  # repobranch: master
+  repobranch: master
+  repourl:
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -16,9 +17,11 @@ pool:
 steps:
 - script: |
     echo repodir: $REPODIR
-    [[ -z "$REPODIR" ]] && echo 'variable $REPODIR not found'
+    [[ -z "$REPODIR" ]] && echo '$REPODIR not found' && exit 1
     echo repobranch: $REPOBRANCH
-    [[ -z "$REPOBRANCH" ]] && echo 'variable $REPOBRANCH not found'
+    [[ -z "$REPOBRANCH" ]] && echo '$REPOBRANCH not found' && exit 1
+    echo repourl: $REPOURL
+    [[ -z "$REPOURL" ]] && echo '$REPOURL not found' && exit 1
   displayName: 'Print environment'
 
 # - powershell: |
