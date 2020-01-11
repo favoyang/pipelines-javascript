@@ -44,7 +44,7 @@ steps:
   displayName: 'Clone $(repoDir) repository'
 
 - script: |
-    PACKAGEFOLDER=`node findPackage.js $(packageName) $(repoDir)`
+    PACKAGEFOLDER=`node findPackage.js $(packageName)1 $(repoDir)`
     if [[ -z "$PACKAGEFOLDER" ]]; then
       echo "WARN: no valid package.json found, fallback to $(repoDir)"
       PACKAGEFOLDER=$(repoDir)
