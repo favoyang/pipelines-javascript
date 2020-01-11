@@ -7,15 +7,15 @@ trigger:
 - master
 
 variables:
-  # repobranch: master
   repodir: repo
+  # repobranch: master
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
 - script: |
-    echo repogit: $(repogit)
+    echo repodir: $(repodir)
     echo repobranch: $(repobranch)
   displayName: 'Print environment'
 
